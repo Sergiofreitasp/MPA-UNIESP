@@ -1,0 +1,7 @@
+Regra 1: OK! Compra e Reserva são um tipo de transação e não um papel assumido.
+Regra 2: OK! Compra e Reserva tem características próprias. Não tem como uma compra passar a ser uma reserva.
+Regra 3: OK! Não existe nenhum método nem atributo nas subclasses que quando estendido a transação faça override ou anule algo.
+Regra 4: OK! 
+Regra 5: OK! Compra e Reserva são um tipo especial de transação.
+
+Nesse caso, seria ideal o uso da Herança!

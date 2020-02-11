@@ -1,0 +1,3 @@
+A – A Classe Main estaria no mesmo pacote que as outras classes, so que sem interação com essas classes, já que a Main seria uma classe onde se irá construir os Objetos.
+B – No caso do diagrama apresentado, a classe Jogo tem um método abstrato que abriga as classes que herdam dela a implementarem esse método. 
+C – Na classe Main. Primeiramente o nome da classe que se deseja instanciar, depois uma variável de referência, depois um sinal de igual, depois a palavra “new”, posteriormente o nome da classe que se deseja instanciar, seguindo de parênteses e ponto e vírgula “();”.
