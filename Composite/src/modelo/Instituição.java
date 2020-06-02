@@ -14,34 +14,50 @@ import java.util.ArrayList;
 public class Instituição implements Participantes{
     private String nome;
     private int membros;
+    private boolean inst;
 
     
     public Instituição(String nome, int membros) {
         this.nome = nome;
         this.membros = membros;
+        this.inst = true;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public int getMembros() {
         return membros;
     }
-    
-    
 
-    @Override
-    public int totalParticipantes() {
-        return this.getMembros();
+    public void setMembros(int membros) {
+        this.membros = membros;
     }
 
-    @Override
-    public int totalAssentos() {
-        return this.getMembros();
+    public boolean isInst() {
+        return true;
+    }
+
+    public void setInst(boolean inst) {
+        this.inst = inst;
     }
 
     @Override
     public String toString() {
-        return "Institui\u00e7\u00e3o{" + "nome=" + nome + ", membros=" + membros + '}';
+        return "Institui\u00e7\u00e3o{" + "nome=" + nome + ", membros=" + membros + ", inst=" + inst + '}';
     }
     
+
+    
+    
+    
+
+   
     
     
 }

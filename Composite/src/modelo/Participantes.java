@@ -10,6 +10,7 @@ package modelo;
  * @author Usuario
  */
 public interface Participantes {
-    public int totalParticipantes();
-    public int totalAssentos();
+    public String getNome();
+    public boolean isInst();
+    public int getMembros();
 }

@@ -12,64 +12,91 @@ import java.util.ArrayList;
  * @author Usuario
  */
 public class CompositeCongresso implements Participantes{
-    private ArrayList<Individuo> ind;
-    private ArrayList<Instituição> inst;
+    private String nome;
+    private ArrayList<Participantes> participantes;
 
-   
-    public CompositeCongresso(ArrayList<Individuo> ind, ArrayList<Instituição> inst) {
-        this.ind = ind;
-        this.inst = inst;
+    public CompositeCongresso(String nome) {
+        this.nome = nome;
+        this.participantes = new ArrayList<>();
     }
 
-    public ArrayList<Individuo> getInd() {
-        return ind;
+    public String getNome() {
+        return nome;
     }
 
-    public void setInd(ArrayList<Individuo> ind) {
-        this.ind = ind;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public ArrayList<Instituição> getInst() {
-        return inst;
+    public ArrayList<Participantes> getParticipantes() {
+        return participantes;
     }
 
-    public void setInst(ArrayList<Instituição> inst) {
-        this.inst = inst;
+    public void setParticipantes(ArrayList<Participantes> participantes) {
+        this.participantes = participantes;
     }
     
-    
-
-    @Override
     public int totalParticipantes() {
-        int totIND = ind.size();
-        int totINST = 0;
-        
-        for (Instituição i: inst){
-            totINST = totINST + i.getMembros();
+        int tam=0;
+        for(Participantes p: participantes){
+            
+            tam= tam + p.getMembros();   
         }
-        return totIND + totINST;
+        return tam;
     }
 
-    @Override
+    
     public int totalAssentos() {
-        int totIND = ind.size();
-        int totINST = 0;
-        
-        for (Instituição i: inst){
-            totINST = totINST + i.getMembros();
+        int tam=0;
+        for(Participantes p: participantes){
+            
+            tam= tam + p.getMembros();   
         }
-        return totIND + totINST;
+        return tam;
     }
+    
     public int totalIndividuos() {
-        return ind.size();
+        int tam=0;
+        for(Participantes p: participantes){
+            if(p.isInst()){
+                
+            }else{
+                tam = tam +1;
+            }
+        }
+        return tam;
     }
     public int totalInstituiçoes() {
-        return inst.size();
+        int tam=0;
+        for(Participantes p: participantes){
+            if(p.isInst()){
+                tam = tam +1;
+            }else{
+                
+            }
+        }
+        return tam;
     }
 
     @Override
     public String toString() {
-        return "CompositeCongresso{" + "ind=" + ind + ", inst=" + inst + '}';
+        return "CompositeCongresso{" + "nome=" + nome + ", participantes=" + participantes + '}';
+    }
+
+    @Override
+    public boolean isInst() {
+        return true;
+    }
+
+    @Override
+    public int getMembros() {
+        return 0;
+    }
+    public void add(Participantes p){
+        participantes.add(p);
+    }
+    public void remove(Participantes p){
+        participantes.remove(p);
     }
     
 }

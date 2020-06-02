@@ -14,6 +14,7 @@ public class Individuo implements Participantes{
     private String assento;
     private String id;
     private String nome;
+    private boolean inst;
 
 
     public Individuo(String id, String nome) {
@@ -21,6 +22,7 @@ public class Individuo implements Participantes{
         this.assento = assentodisponivel();
         this.id = id;
         this.nome = nome;
+        this.inst = false;
     }
     
     public static String assentodisponivel(){
@@ -28,20 +30,52 @@ public class Individuo implements Participantes{
         return "cadeira tal, fila tal";
     }
 
-    @Override
-    public int totalParticipantes() {
-        return 1;
+    public int getMembros() {
+        return membros;
     }
 
-    @Override
-    public int totalAssentos() {
-        return 1;
+    public void setMembros(int membros) {
+        this.membros = membros;
+    }
+
+    public String getAssento() {
+        return assento;
+    }
+
+    public void setAssento(String assento) {
+        this.assento = assento;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public boolean isInst() {
+        return false;
+    }
+
+    public void setInst(boolean inst) {
+        this.inst = inst;
     }
 
     @Override
     public String toString() {
-        return "Individuo{" + "membros=" + membros + ", assento=" + assento + ", id=" + id + ", nome=" + nome + '}';
+        return "Individuo{" + "membros=" + membros + ", assento=" + assento + ", id=" + id + ", nome=" + nome + ", inst=" + inst + '}';
     }
+    
+
     
     
 }
